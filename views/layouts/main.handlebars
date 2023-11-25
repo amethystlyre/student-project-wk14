@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund My Project!</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+    <span role="img" aria-label="money">💸</span>
+      Fund My Project!
+    </h1>
+    <!-- TODO: Add a comment describing the functionality of this helper -->
+    {{!-- check if user logged in, if so display logout button --}}
+
+    <nav>
+    {{#if logged_in}}
+       <a href="/profile">profile</a>  |
+      <button class="btn" id="logout">logout</button>
+    {{else}}
+    <a href="/login">login</a>
+    {{/if}}
+    </nav>
+
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  <!-- TODO: Add a comment describing the functionality of this helper -->
+  {{!-- run the logout.js script to handle logout function --}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
